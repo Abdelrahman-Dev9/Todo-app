@@ -1,10 +1,14 @@
 import { Router, Request, Response } from "express";
-import { getUsers, createUser, noRoute } from "../controllers/user.controllers";
+import {
+  getAllTodos,
+  createTodo,
+  notTodo,
+} from "../controllers/user.controllers";
 
 const router = Router();
 
-router.get("/", getUsers);
-router.post("/", createUser);
-router.all("*", noRoute);
+router.get("/", getAllTodos);
+router.post("/", createTodo);
+router.all("*", notTodo);
 
 export default router;
