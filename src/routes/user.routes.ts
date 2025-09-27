@@ -1,14 +1,8 @@
-import { Router, Request, Response } from "express";
-import {
-  getAllTodos,
-  createTodo,
-  notTodo,
-} from "../controllers/user.controllers";
+import { Router } from "express";
+import { createTodo } from "../controllers/CreateTodo.controllers";
 
 const router = Router();
 
-router.get("/", getAllTodos);
-router.post("/", createTodo);
-router.all("*", notTodo);
+router.post("/createTodo", createTodo);
 
 export default router;
